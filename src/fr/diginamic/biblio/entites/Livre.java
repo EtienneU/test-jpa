@@ -1,4 +1,4 @@
-package fr.diginamic.entites;
+package fr.diginamic.biblio.entites;
 
 import java.util.Set;
 
@@ -60,6 +60,14 @@ public class Livre {
 
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
+	}
+
+	public Set<Emprunt> getEmprunts() {
+		return emprunts;
+	}
+
+	public void setEmprunts(Set<Emprunt> emprunts) {
+		this.emprunts = emprunts;
 	}
 	
 }

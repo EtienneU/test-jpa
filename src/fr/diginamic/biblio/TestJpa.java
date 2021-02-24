@@ -1,4 +1,4 @@
-package fr.diginamic;
+package fr.diginamic.biblio;
 
 import java.util.List;
 import java.util.Scanner;
@@ -8,9 +8,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import fr.diginamic.entites.Client;
-import fr.diginamic.entites.Emprunt;
-import fr.diginamic.entites.Livre;
+import fr.diginamic.biblio.entites.Client;
+import fr.diginamic.biblio.entites.Emprunt;
+import fr.diginamic.biblio.entites.Livre;
 
 public class TestJpa {
 
@@ -27,7 +27,7 @@ public class TestJpa {
 			System.out.println(livre + "\n");
 		}
 
-		// Récupération puis affichage des livres résultant da la requête
+		// Récupération puis affichage de tous les livres de la BD
 		TypedQuery<Livre> query1 = em.createQuery("select l from Livre l ", Livre.class);
 		List<Livre> resultLivre = query1.getResultList();
 		int n = 1;
@@ -57,7 +57,7 @@ public class TestJpa {
 		Scanner sc = new Scanner(System.in);
 	    int i = 0;
 	    while (i < 1 || i > 3) {
-	    	System.out.println("\nSaisir l'id d'un Client : ");
+	    	System.out.println("\nSaisir l'id d'un Client (entre 1 et 3) : ");
     		i = sc.nextInt();
 	    }
 		Client client = em.find(Client.class, i);

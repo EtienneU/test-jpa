@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.diginamic.entites;
+package fr.diginamic.biblio.entites;
 
 import java.util.Date;
 import java.util.Set;
@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  * @author Etienne URBANO
@@ -27,9 +28,11 @@ public class Emprunt {
 	@Column(name="ID")
 	private Integer id;
 	
+	//@Temporal
 	@Column(name="DATE_DEBUT")
 	private Date dateDebut;
 	
+	//@Temporal
 	@Column(name="DATE_FIN")
 	private Date dateFin;
 	

@@ -1,4 +1,4 @@
-package fr.diginamic.entites;
+package fr.diginamic.biblio.entites;
 
 import java.util.Set;
 
@@ -22,6 +22,7 @@ public class Client {
 	private String prenom;
 	
 	@OneToMany(mappedBy="client")
+	// mappedBy = nom de l'attribut de la classe Emprunt qui porte la relation ManyToOne, donc "client"
 	private Set<Emprunt> emprunts;
 	
 	public Client() {
